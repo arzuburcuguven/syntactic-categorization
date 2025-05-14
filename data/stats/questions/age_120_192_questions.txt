@@ -1,0 +1,2 @@
+Filename,SentenceCount,S_SQ_yn,S_SQ_yn_2,S_SQ_yn_3,S_SQ_yn_4,S_SQ_yn_5,S_SQ_yn_6,S_SQ_yn_7,S_SQ_yn_8,S_SQ_yn_9,S_SQ_VB_NP_ADVP,S_SBARQ_1,S_SBARQ_2,S_SBARQ_3,S_SBARQ_4,S_SBARQ_5,S_SBARQ_6,S_tag_SV_O,S_tag_SV_O_1,S_tag_VP,S_tag_NP,S_tag_NP_neg,S_tag_SV_neg,S_tag_SVO_neg,S_tag_SV_ADVP,S_tag_SV_ADVP_ADJP,S_tag_SV_ADJP,SQ_neg_VB_NP,S_NP_Q_1,S_PP_Q,S_SQ_VB_NP
+age_120_192.parsed,15792,127,16,33,0,11,0,31,79,1,2,179,8,1,11,0,1,0,0,0,0,0,0,0,0,0,0,4,8,0,24

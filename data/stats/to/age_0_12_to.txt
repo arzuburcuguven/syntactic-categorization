@@ -1,0 +1,2 @@
+Filename,SentenceCount,S_TO_all,S_TO_Q,S_TO_SV,S_TO_gonna
+age_0_12.parsed,170003,739,61,35,6

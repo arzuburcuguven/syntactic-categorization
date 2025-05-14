@@ -1,0 +1,2 @@
+Filename,SentenceCount,S_all_eS
+age_0_12.parsed,170390,1182

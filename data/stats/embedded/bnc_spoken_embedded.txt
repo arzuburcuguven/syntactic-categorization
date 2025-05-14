@@ -1,0 +1,2 @@
+Filename,SentenceCount,S_all_eS
+bnc_spoken.parsed,634795,409

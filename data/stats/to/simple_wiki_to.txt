@@ -1,0 +1,2 @@
+Filename,SentenceCount,S_TO_all,S_TO_Q,S_TO_SV,S_TO_gonna
+simple_wiki.parsed,1061302,532,104,0,0
