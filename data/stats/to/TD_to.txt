@@ -1,2 +1,0 @@
-Filename,SentenceCount,S_TO_all,S_TO_Q,S_TO_SV,S_TO_gonna
-TD.parsed,1733674,4309,218,27,797

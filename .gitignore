@@ -1,0 +1,16 @@
+# OS / editor
+.DS_Store
+*.swp
+.vscode/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# data / models
+*.csv
+*.tsv
+*.h5
+*.txt
+*.parsed
+/data/

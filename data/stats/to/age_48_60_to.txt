@@ -1,2 +1,0 @@
-Filename,SentenceCount,S_TO_all,S_TO_Q,S_TO_SV,S_TO_gonna
-age_48_60.parsed,618135,778,167,149,1374

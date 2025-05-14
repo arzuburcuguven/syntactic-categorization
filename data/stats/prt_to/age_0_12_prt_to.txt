@@ -1,2 +1,0 @@
-Filename,SentenceCount,S_V_VP_PRT,S_SV_VP_PRT
-age_0_12.parsed,170003,1618,320

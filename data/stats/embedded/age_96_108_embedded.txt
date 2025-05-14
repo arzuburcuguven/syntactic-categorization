@@ -1,2 +1,0 @@
-Filename,SentenceCount,S_all_eS
-age_96_108.parsed,52228,67

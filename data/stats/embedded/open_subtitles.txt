@@ -1,2 +1,0 @@
-Filename,WordCount,S_TO_all,S_TO_Q,S_TO_SV,S_TO_gonna
-open_subtitles.parsed,20655118,7352,1145,682,3622

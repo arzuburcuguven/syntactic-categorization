@@ -1,2 +1,0 @@
-Filename,SentenceCount,S_V_VP_PRT,S_SV_VP_PRT
-open_subtitles.parsed,3372394,19790,2068
