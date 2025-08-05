@@ -240,6 +240,11 @@ def parse_args():
         action="store_true",
         help="Whether to shuffle the dataset manually"
     )
+        parser.add_argument(
+        "--condition_name",
+        type=str,
+        help="which name to log"
+    )
 
 
     args = parser.parse_args()
@@ -792,7 +797,7 @@ def main():
             wandb.init(
                 project="babylm_curriculum_experiments",
                 config=vars(args_copy),
-                name=f"{args_copy.condition}_seed{s}"
+                name=f"{args_copy.condition_name}_seed{s}"
             )
     run_trainer(args_copy)
 
