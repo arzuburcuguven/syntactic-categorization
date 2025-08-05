@@ -1,0 +1,12 @@
+## config.yaml
+
+```yaml
+paths:
+  raw: data/raw
+  cleaned_childes: data/raw/clean_childes
+  cleaned_other: data/raw/clean_other
+  parsed: data/parsed
+  captures: data/captures
+  stats: data/stats
+  corpora: data/corpora
+patterns_dir: src/tregex/patterns

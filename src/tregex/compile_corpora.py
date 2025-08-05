@@ -5,15 +5,16 @@ import json
 import random
 import argparse
 
+
 # --- CONFIG ---
 # relative to this script: data/captures/<category>/
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'captures'))
 AGG_DIR = os.path.join(BASE_DIR, 'agg')
-COMP_DIR = os.path.join(BASE_DIR, 'compiled')
+COMP_DIR = os.path.join(BASE_DIR, 'compiled/clean')
 
 CATEGORIES = [
-    'aux', 'complexq', 'coord', 'embedded', 'frag', 'negation_simple',
-    'pos_adv_categories', 'pp', 'prt_to', 'questions', 'simple_categories',
+    'aux', 'questions', 'coord', 'embedded', 'frag', 'negation',
+    'pos_adv', 'pp', 'prt', 'SVX',
     'tense', 'to', 'relative'
 ]
 
@@ -21,19 +22,19 @@ CATEGORIES = [
 GROUPINGS = {
     'simple_to_complex': {
         'simple': [
-            'simple_categories','pos_adv_categories','pp',
-            'prt_to','aux','tense','negation_simple'
+            'frag','SVX','pos_adv','pp',
+            'prt','aux','tense','negation'
         ],
         'complex': [
-            'complexq','coord','embedded','frag','questions','to','relative'
+            'questions','coord','embedded','to','relative'
         ]
     },
     'syntactic_stages': {
         'stage1': [
-            'simple_categories','pos_adv_categories','pp',
-            'prt_to','aux','tense','negation_simple'
+            'SVX','pos_adv','pp',
+            'prt','aux','tense','negation'
         ],
-        'stage2': ['questions','complexq'],
+        'stage2': ['questions'],
         'stage3': ['coord','embedded','to','frag','relative']
     }
 }

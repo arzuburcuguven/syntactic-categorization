@@ -11,8 +11,8 @@ from dict import w2string
 import string
 
 root_folder = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-data_folder = os.path.join(root_folder, "data/raw/CHILDES")
-output_folder = os.path.join(root_folder, "data/clean/CHILDES")
+data_folder = os.path.join(root_folder, "data/raw/CHILDES_BabyLM")
+output_folder = os.path.join(root_folder, "data/clean/CHILDES_BabyLM")
 
 ignore_regex = re.compile(r'(�|www|xxx|yyy|\[=! singing\])')
 
@@ -22,7 +22,7 @@ file_metadata = []
 FILLERS = set([
     "o", "mhm", "yeah", "huh", "hm", "um", "ah", "oh", "aha", "uh", "whoops", "whoop", "wow",
     "ouch", "yay", "oop", "oops", "aw", "awoh", "kay", "whoa", "ugh", "oy", "mm", "hey",
-    "yum", "whee", "ssh", "moo", "eh", "voom", "boom", "gib", "zoom", "da", "ba", "bonk"
+    "yum", "whee", "ssh", "moo", "eh", "voom", "boom", "gib", "zoom", "da", "ba", "bonk", "na", "nna", "nnga", "haha"
 ])
 
 """ Filtering Functions """
