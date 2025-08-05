@@ -29,6 +29,7 @@ import os
 import random
 from itertools import chain
 from pathlib import Path
+import yaml
 
 import datasets
 import torch
@@ -69,6 +70,11 @@ MODEL_TYPES = tuple(conf.model_type for conf in MODEL_CONFIG_CLASSES)
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Finetune a transformers model on a causal language modeling task")
+    parser.add_argument(
+        "--config",
+        type=str,
+        help="Path to YAML file"
+    )
     parser.add_argument(
         "--dataset_name",
         type=str,
@@ -237,6 +243,12 @@ def parse_args():
 
 
     args = parser.parse_args()
+    if args.config:
+        with open(args.config) as f:
+            yaml_args = yaml.safe_load(f)
+        for key,value in yaml_args.items():
+            setattr(args,key,value)
+    return args
 
     # Sanity checks
     if args.dataset_name is None and args.train_file is None and args.validation_file is None:
@@ -280,13 +292,10 @@ def run_eval(model, eval_dataloader, accelerator, args, step=None, prefix=None):
 
     if args.with_tracking:
         accelerator.log({f"{name}eval_loss": eval_loss, f"{name}perplexity": perplexity}, step=step)
-    model.train()
 
 
-def main():
-    args = parse_args()
 
-
+def run_trainer(args):
     # Sending telemetry. Tracking the example usage helps us better allocate resources to maintain them. The
     # information sent is the one passed as arguments along with your Python/PyTorch versions.
     send_example_telemetry("run_clm_no_trainer", args)
@@ -707,19 +716,16 @@ def main():
             if accelerator.sync_gradients:
                 progress_bar.update(1)
                 completed_steps += 1
-                # Run main eval every 10654 steps
-                if completed_steps % 10654 == 0:
-                    run_eval(model, eval_dataloader, accelerator, args, step=completed_steps)
 
-
-                if isinstance(checkpointing_steps, int) and completed_steps % checkpointing_steps == 0:
+            if isinstance(checkpointing_steps, int):
+                if completed_steps % checkpointing_steps == 0 and accelerator.sync.gradients:
                     output_dir = f"step_{completed_steps}"
                     if args.output_dir is not None:
                         output_dir = os.path.join(args.output_dir, output_dir)
                     accelerator.save_state(output_dir)
 
-                if completed_steps >= args.max_train_steps:
-                    break
+            if completed_steps >= args.max_train_steps:
+                break
 
 
         if args.push_to_hub and epoch < args.num_train_epochs - 1:
@@ -765,6 +771,30 @@ def main():
 
     accelerator.wait_for_everyone()
     accelerator.end_training()
+
+
+def main():
+    args = parse_args()
+    seeds = args.seed if isinstance(args.seed, list) else [args.seed]
+
+    for s in seeds:
+        args_copy = argparse.Namespace(**vars(args))
+        args_copy.seed = s 
+        args_copy.output_dir = f"{args.output_dir}_seed{s}"
+        os.makedirs(args_copy.output_dir, exist_ok=True)
+
+        if args_copy.seed is not None:
+            set_seed(args_copy.seed)
+
+
+        if args_copy.with_tracking and args_copy.report_to == "wandb":
+            import wandb
+            wandb.init(
+                project="babylm_curriculum_experiments",
+                config=vars(args_copy),
+                name=f"{args_copy.condition}_seed{s}"
+            )
+    run_trainer(args_copy)
 
 
 if __name__ == "__main__":
