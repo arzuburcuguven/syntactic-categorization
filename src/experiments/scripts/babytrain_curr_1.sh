@@ -1,10 +1,10 @@
 #!/bin/bash
 #SBATCH --job-name=babytrain_curr_1
-#SBATCH --gres=gpu:2
+#SBATCH --gres=gpu:1
 #SBATCH --mem=40GB
 #SBATCH --time=24:00:00
 #SBATCH --partition=scavenge
-#SBATCH --output=babytrain_curr_1%j.out
+#SBATCH --output=logs/babytrain_curr_1_%j.out
 #SBATCH --account=researchers
 
 

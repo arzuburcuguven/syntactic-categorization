@@ -1,0 +1,7 @@
+{"time":"2025-08-05T17:11:12.784288901+02:00","level":"INFO","msg":"stream: starting","core version":"0.20.1","symlink path":"/home/argy/extractor/src/experiments/scripts/wandb/run-20250805_171111-bhk3tusm/logs/debug-core.log"}
+{"time":"2025-08-05T17:11:13.185830817+02:00","level":"INFO","msg":"stream: created new stream","id":"bhk3tusm"}
+{"time":"2025-08-05T17:11:13.185867967+02:00","level":"INFO","msg":"stream: started","id":"bhk3tusm"}
+{"time":"2025-08-05T17:11:13.185873247+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"bhk3tusm"}
+{"time":"2025-08-05T17:11:13.18610782+02:00","level":"INFO","msg":"handler: started","stream_id":"bhk3tusm"}
+{"time":"2025-08-05T17:11:13.186152724+02:00","level":"INFO","msg":"sender: started","stream_id":"bhk3tusm"}
+{"time":"2025-08-05T17:11:13.708858736+02:00","level":"INFO","msg":"Starting system monitor"}

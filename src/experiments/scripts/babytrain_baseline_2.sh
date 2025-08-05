@@ -4,7 +4,7 @@
 #SBATCH --mem=40GB
 #SBATCH --time=24:00:00
 #SBATCH --partition=scavenge
-#SBATCH --output=babytrain_baseline_2%j.out
+#SBATCH --output=logs/babytrain_baseline_2_%j.out
 #SBATCH --account=researchers
 
 

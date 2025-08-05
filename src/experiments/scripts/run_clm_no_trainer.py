@@ -240,7 +240,7 @@ def parse_args():
         action="store_true",
         help="Whether to shuffle the dataset manually"
     )
-        parser.add_argument(
+    parser.add_argument(
         "--condition_name",
         type=str,
         help="which name to log"
@@ -785,7 +785,7 @@ def main():
     for s in seeds:
         args_copy = argparse.Namespace(**vars(args))
         args_copy.seed = s 
-        args_copy.output_dir = f"{args.output_dir}_seed{s}"
+        args_copy.output_dir = f"{args.output_dir}_seed_{s}"
         os.makedirs(args_copy.output_dir, exist_ok=True)
 
         if args_copy.seed is not None:
@@ -797,9 +797,10 @@ def main():
             wandb.init(
                 project="babylm_curriculum_experiments",
                 config=vars(args_copy),
-                name=f"{args_copy.condition_name}_seed{s}"
+                name=f"{args_copy.condition_name}_seed_{s}"
             )
-    run_trainer(args_copy)
+            
+        run_trainer(args_copy)
 
 
 if __name__ == "__main__":
