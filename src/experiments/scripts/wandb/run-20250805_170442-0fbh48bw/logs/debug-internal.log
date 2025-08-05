@@ -1,8 +1,0 @@
-{"time":"2025-08-05T17:04:45.124752822+02:00","level":"INFO","msg":"stream: starting","core version":"0.20.1","symlink path":"/home/argy/extractor/src/experiments/scripts/wandb/run-20250805_170442-0fbh48bw/logs/debug-core.log"}
-{"time":"2025-08-05T17:04:45.581865915+02:00","level":"INFO","msg":"stream: created new stream","id":"0fbh48bw"}
-{"time":"2025-08-05T17:04:45.581912613+02:00","level":"INFO","msg":"stream: started","id":"0fbh48bw"}
-{"time":"2025-08-05T17:04:45.581918975+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"0fbh48bw"}
-{"time":"2025-08-05T17:04:45.582210505+02:00","level":"INFO","msg":"handler: started","stream_id":"0fbh48bw"}
-{"time":"2025-08-05T17:04:45.582245391+02:00","level":"INFO","msg":"sender: started","stream_id":"0fbh48bw"}
-{"time":"2025-08-05T17:04:45.825684809+02:00","level":"INFO","msg":"api: retrying HTTP error","status":500,"url":"https://api.wandb.ai/graphql","body":"{\"errors\":[{\"message\":\"An internal error occurred. Please contact support.\",\"path\":[\"upsertBucket\"]}],\"data\":{\"upsertBucket\":null}}"}
-{"time":"2025-08-05T17:04:48.383668154+02:00","level":"INFO","msg":"Starting system monitor"}
