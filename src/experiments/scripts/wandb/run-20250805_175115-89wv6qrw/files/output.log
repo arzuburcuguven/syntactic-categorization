@@ -137,4 +137,4 @@ Generate config GenerationConfig {
   "eos_token_id": 50256
 }
 
-Running tokenizer on dataset:  81%|████████  | 6201000/7702053 [02:40<00:58, 25570.69 examples/s]
+Running tokenizer on dataset:  93%|█████████▎| 7177000/7702053 [03:17<00:19, 27334.23 examples/s]
