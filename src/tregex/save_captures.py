@@ -9,7 +9,6 @@ import subprocess
 import re
 from pathlib import Path
 
-# Add near top of your script
 PREDECESSORS = {
     'relative':   [],
     'coord':  ['relative'],

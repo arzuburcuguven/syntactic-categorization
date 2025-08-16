@@ -6,11 +6,13 @@ from pathlib import Path
 
 PREDECESSORS = {
     'relative':   [],
-    'complexq':   ['relative'],
-    'coord':      ['relative', 'complexq'],
-    'embedded':   ['relative', 'complexq', 'coord'],
-    'to':         ['relative', 'complexq', 'coord', 'embedded'],
+    'coord':  ['relative'],
+    'embedded':  ['relative', 'coord'],
+    'to':   ['relative', 'embedded', 'coord'],
+    'questions':    ['relative', 'to', 'coord', 'embedded'],
+    # the “simple” categories aren’t in this dict—you’ll run them normally
 }
+
 
 def load_patterns(category_name: str):
     path = os.path.join("txt_files", f"tregex_patterns_{category_name}.txt")

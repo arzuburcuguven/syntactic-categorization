@@ -1,9 +1,0 @@
-          corpus  category_count_sum      total  pct_of_total
-0            BNC            265895.0   634795.0         41.89
-1        Childes           2818446.0  4849328.0         58.12
-2  OpenSubtitles           1189346.0  3372394.0         35.27
-3    Simple Wiki            126404.0  1061302.0         11.91
-4    Switchboard             32944.0    96809.0         34.03
-5  TinyDialogues            568869.0  1733674.0         32.81
-
-python save_captures.py /Users/argy/workspace/extractor/data/parsed/bnc_spoken aux

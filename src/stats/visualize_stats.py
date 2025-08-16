@@ -27,7 +27,7 @@ def map_corpus(name):
     if name.startswith('switchboard'):
         return 'Switchboard'
     if name.startswith('TD'):
-        return 'TinyDialogues'
+        return 'Gutenberg'
     return None
 
 df['corpus'] = df['corpus'].apply(map_corpus)

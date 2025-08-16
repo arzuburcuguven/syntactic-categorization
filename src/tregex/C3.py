@@ -1,9 +1,9 @@
 import numpy as np
 import random
 
-simple = "/Users/argy/workspace/extractor/data/captures/compiled/clean/syntactic_stages_stage_s.txt"
+simple = "data/compiled/simple.txt"
 
-complex = "/Users/argy/workspace/extractor/data/captures/compiled/clean/syntactic_stages_stage_cq.txt"
+complex = "data/compiled/complex.txt"
 
 with open(simple, "r") as s:
     simple_c = s.readlines()
@@ -39,7 +39,7 @@ def interweave_function(simple, complex, total):
 
 final_lines = interweave_function(simple_c, complex_c, len(simple_c) + len(complex_c))
 
-output_file = "/Users/argy/workspace/extractor/data/captures/compiled/clean/prob_comp.txt"
+output_file = "data/compiled/C3.txt"
 
 with open(output_file, "w") as f:
     f.writelines(final_lines)
